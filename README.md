@@ -94,9 +94,9 @@ Script.complete()
     1. Open the Shortcuts app and create a new shortcut
     2. Search for 'Open App' — some apps may have their own specific open app shortcut, so use the one pictured below:
     
-    <p align="center">
-      <img src="openAppAction.jpg" alt="Open App Action" width="200"/>
-    </p>
+        - <p align="center">
+              <img src="openAppAction.jpg" alt="Open App Action" width="200"/>
+            </p>
     3. In that action, choose the app that you want to open
     4. Rename this shortcut to something memorable like "Launch {App}"
     5. In the url field of the app in WidgetApps.txt, you can now use this url: "shortcuts://run-shortcut?name=" where after name you fill in the name of the shortcut you created. If there is a space in the name of the shortcut, you must replace it with "%20"
