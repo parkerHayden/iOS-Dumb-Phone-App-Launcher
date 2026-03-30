@@ -57,4 +57,10 @@ Script.complete()
 
 ## Setting Up Apps
 1. Open the WdgetApps txt file using Paper to edit it
-2. Create
+2. Create a JSON array of dictionaries where each dictionary has the keys "name" and "url".
+    - The value of name will be the text to represent the app on the widget and the value of url will be the link that directs you to that app.
+### Example of JSON:
+
+```
+
+```
