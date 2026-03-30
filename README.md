@@ -1,9 +1,17 @@
 # iOS Dumb Phone App Launcher
 Combining Scriptable, iOS settings and shortcuts to create a free way to dumb down your iPhone with more features than standard apps.
 
-## Setup
-- Download the app Scriptable
-- Create a new script and enter this code:
+## Scriptable Setup
+1. Download the app [Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)
+2. In the iOS files app, navigate to the On My iPhone section and create a new folder named "Scriptable"
+3. In that folder create a new file named WidgetApps.txt
+    - To edit txt files on iOS download the app [Paper](https://apps.apple.com/us/app/paper-writing-app-notes/id1476984841)
+4. In Scriptable:
+    - Open Settings
+    - Go to 'File Bookmarks'
+    - Add a new file bookmark folder that points to the Scriptable folder made in step 2
+    - Create a new script and enter this code:
+
 
 ```
 let fm = FileManager.local()
@@ -11,7 +19,7 @@ let folderPath = fm.bookmarkedPath("Scriptable")
 let path = fm.joinPath(folderPath, "WidgetApps.txt")
 
 let apps = [
-  { name: "Fallback", url: "shortcuts://run-shortcut?name=Launch%20YouTube" }
+  { name: "Something went wrong", url: "" }
 ]
 
 
@@ -46,3 +54,7 @@ for (let app of apps) {
 Script.setWidget(widget)
 Script.complete()
 ```
+
+## Setting Up Apps
+1. Open the WdgetApps txt file using Paper to edit it
+2. Create
