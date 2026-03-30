@@ -7,7 +7,7 @@ Combining Scriptable, iOS settings and shortcuts to create a free way to dumb do
     - [URL Guide](#url-guide)
     - [Setting Up the Widget](#setting-up-the-widget)
     - [Good to Go](#good-to-go)
-- [General Setup Information](#general-setup-information)
+- [Setup Explanation](#setup-explanation)
 - [Incorporating Shortcuts and Automations](#incorporating-shortcuts-and-automations)
 
 ## Scriptable Setup
@@ -27,9 +27,6 @@ let fm = FileManager.local()
 let folderPath = fm.bookmarkedPath("Scriptable")
 let path = fm.joinPath(folderPath, "WidgetApps.txt")
 
-let apps = [
-  { name: "Something went wrong", url: "" }
-]
 
 
 if (fm.fileExists(path)) {
@@ -37,7 +34,7 @@ if (fm.fileExists(path)) {
     let content = fm.readString(path)
     apps = JSON.parse(content)
   } catch (e) {
-    // silently use fallback if JSON is invalid
+    console.log("Couldn't find WidgetApps.txt")
   }
 }
 
@@ -94,9 +91,9 @@ Script.complete()
     1. Open the Shortcuts app and create a new shortcut
     2. Search for 'Open App' — some apps may have their own specific open app shortcut, so use the one pictured below:
     
-        - <p align="center">
-              <img src="openAppAction.jpg" alt="Open App Action" width="200"/>
-            </p>
+    <p align="center">
+      <img src="/assets/openAppAction.jpg" alt="Open App Action" width="200"/>
+    </p>
     3. In that action, choose the app that you want to open
     4. Rename this shortcut to something memorable like "Launch {App}"
     5. In the url field of the app in WidgetApps.txt, you can now use this url: "shortcuts://run-shortcut?name=" where after name you fill in the name of the shortcut you created. If there is a space in the name of the shortcut, you must replace it with "%20"
@@ -107,11 +104,33 @@ Script.complete()
 3. In the settings select the script that you created and select "Run Script" in the "When Interacting" section
 
 ### Good to Go
-The app launcher should now be able to work, in Scriptable run the script and see if the widget updates with the apps setup in the WidgetApps text file. If it doesn't do it immediately, Scriptable widgets should refresh each time your phone is turned on, so simply turning it off and back on again might work.
+The app launcher should now be able to work, in Scriptable run the script and see if the widget updates with the apps setup in the WidgetApps txt file. If it doesn't do it immediately, Scriptable widgets should refresh each time your phone is turned on, so simply turning it off and back on again might work.
 
-## General Setup Information
-The script is setup to determine what apps to display from a text file rather than being built directly into its code because it opens the door for even more functionality by incorporating iOS shortcuts and automations. For instance, you may want a different set of apps at home than you do while at work. You can use automations and shortcuts to edit the WidgetApps txt file and refresh the widget to get your different apps.
+## Setup Explanation
+The script is setup to determine what apps to display from a txt file rather than being built directly into its code because it opens the door for even more functionality by incorporating iOS shortcuts and automations. For instance, you may want a different set of apps at home than you do while at work. You can use automations and shortcuts to edit the WidgetApps txt file and refresh the widget to get your different apps.
 
 ## Incorporating Shortcuts and Automations
 
+### Shortcut Setup
+The WidgetApps txt file can be edited using shortcuts, allowing for the apps within the widget to be changed automatically.
+1. Create a new shortcut in the Shortcuts app
+2. Add the text action and input a new JSON array for a set of apps for the widget
+3. Add the Save File action
+    - Disable the Ask Where to Save toggle, it should now say "Save text to Shortcuts"
+    - Tap on Shortcuts and select the Scriptable folder previously created
+    - Fill in WidgetApps.txt in the Subpath option
+    - Turn on the Overwrite File if Exists toggle
+4. Add the Run Script action from Scriptable
+    - Select the script that you created earlier
+    - Clear the parameter "Saved File"
+5. Add the Refresh All Widgets action from Scriptable
+6. (Optional) Add the Go to Home Screen action
+
+#### Example
+<figure align="center">
+  <img src="/assets/Edit WidgetApps Shortcut Example.jpg"
+       alt="Edit WidgetApps Shortcut Example"
+       width="200">
+  <figcaption>This shortcut can be obtained <a href='https://www.icloud.com/shortcuts/7d55c5abd8f1413ea2953fd811055a03'>here</a> </figcaption>
+</figure>
 
