@@ -62,5 +62,11 @@ Script.complete()
 ### Example of JSON:
 
 ```
-
+[
+  { "name": "YouTube", "url": "shortcuts://run-shortcut?name=Launch%20Youtube" },
+  { "name": "Spotify", "url": "spotify://" },
+  { "name": "Reddit", "url": "shortcuts://run-shortcut?name=Launch%20Reddit" },
+  { "name": "Photos", "url": "photos-redirect://" },
+  { "name": "Maps", "url": "maps://" }
+]
 ```
