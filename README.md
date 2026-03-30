@@ -127,10 +127,16 @@ The WidgetApps txt file can be edited using shortcuts, allowing for the apps wit
 6. (Optional) Add the Go to Home Screen action
 
 #### Example
-<figure align="center">
-  <img src="/assets/Edit WidgetApps Shortcut Example.jpg"
-       alt="Edit WidgetApps Shortcut Example"
-       width="200">
-  <figcaption>This shortcut can be obtained <a href='https://www.icloud.com/shortcuts/7d55c5abd8f1413ea2953fd811055a03'>here</a> </figcaption>
-</figure>
+<p align="center">
+  <img
+    src="/assets/Edit WidgetApps Shortcut Example.jpg"
+    alt="Edit WidgetApps Shortcut Example"
+    width="200"
+  >
+</p>
+
+<p align="center">
+  This shortcut can be obtained
+  <a href="https://www.icloud.com/shortcuts/7d55c5abd8f1413ea2953fd811055a03">here</a>.
+</p>
 
