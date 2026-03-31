@@ -9,6 +9,9 @@ Combining Scriptable, iOS settings and shortcuts to create a free way to dumb do
     - [Good to Go](#good-to-go)
 - [Setup Explanation](#setup-explanation)
 - [Incorporating Shortcuts and Automations](#incorporating-shortcuts-and-automations)
+    - [Shortcut Setup](#shortcut-setup)
+    - [Automations](#automations)
+- [Other Settings and Tips to Dumb Your iPhone](#other-settings-and-tips-to-dumb-your-iphone)
 
 ## Scriptable Setup
 1. Download the app [Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)
@@ -92,8 +95,9 @@ Script.complete()
     2. Search for 'Open App' — some apps may have their own specific open app shortcut, so use the one pictured below:
     
     <p align="center">
-      <img src="/assets/openAppAction.jpg" alt="Open App Action" width="200"/>
+      <img src="/assets/openAppAction.jpg" alt="Open App Action" width="400"/>
     </p>
+
     3. In that action, choose the app that you want to open
     4. Rename this shortcut to something memorable like "Launch {App}"
     5. In the url field of the app in WidgetApps.txt, you can now use this url: "shortcuts://run-shortcut?name=" where after name you fill in the name of the shortcut you created. If there is a space in the name of the shortcut, you must replace it with "%20"
@@ -126,7 +130,7 @@ The WidgetApps txt file can be edited using shortcuts, allowing for the apps wit
 5. Add the Refresh All Widgets action from Scriptable
 6. (Optional) Add the Go to Home Screen action
 
-#### Example
+#### Example:
 <p align="center">
   <img
     src="/assets/Edit WidgetApps Shortcut Example.jpg"
@@ -136,7 +140,36 @@ The WidgetApps txt file can be edited using shortcuts, allowing for the apps wit
 </p>
 
 <p align="center">
-  This shortcut can be obtained
-  <a href="https://www.icloud.com/shortcuts/7d55c5abd8f1413ea2953fd811055a03">here</a>.
+  <a href="https://www.icloud.com/shortcuts/7d55c5abd8f1413ea2953fd811055a03">Get this exact shortcut</a>.
 </p>
 
+
+### Automations
+You can use the shortcut to change the WidgetApps txt file in combination with automations to have the apps in the widget change when something specific happens. This example shows how to setup an automation for arriving somewhere of your choosing.
+
+1. In the Shortcuts app go to the automations tab and create a new automation
+2. Select Arrive
+    - Enter the address of the location you want
+    - (Optional) put in a specific time range
+    - Select "Run Immediately"
+3. Select the shortcut you created that corresponds with the apps that you want at this location
+
+## Other Settings and Tips to Dumb Your iPhone
+For this dumb app launcher to be effective, remove all apps from your home screen. They don't necessarily need to be deleted, but at least removed.
+
+- Make use of the Today View screen (this is the screen to the left of the main home screen)
+    - Important apps that may not have been able to make it to your launcher probably have widgets that can be fit into this screen. For instance some useful ones are Clock, Maps, Weather, Fitness, etc.
+- Disable suggested apps in search
+    - Settings → Apple Intelligence & Siri → Suggest Apps Before Searching (disable)
+    - (Not related to dumbing of your phone) While here I would disable Apple Intelligence entirely and make sure in the apps section that the setting "Learn from this App" is disabled for each one
+- Disable apps from appearing in search
+    - Settings → Apps → {App you want disabled from search} → Search → Show App in Search (disable) and Show Content in Search (disable)
+- Disable apps from being suggested in App Library
+    - Settings → Apps → {App you want disabled from search} → Apple Intelligence & Siri → Suggest App (disable)
+- Make new apps not download to home screen
+    - Settings → Home Screen & App Library → App Library Only (select)
+- Reduce color on screen (two ways)
+    - Settings → Accessibility → Display & Text Size → Reduce White Point (enable) → Select intensity level
+    - Settings → Accessibility → Display & Text Size → Color Filters → Color Filters (enable) → Grayscale (select)
+    - A good way to use these is to combine them with automations. You can toggle these settings on and off in shortcuts with the Set White Point and Set Color Filters actions respectively.
+        - The automation I use is that whenever any app is closed, I determine if I am home and if I am I turn on the color filters and white point. Alternatively, if there are any apps in which I would want normal color (like photos) I have another automation that turns these settings off when those apps are opened.
