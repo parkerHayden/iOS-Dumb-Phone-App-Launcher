@@ -3,7 +3,7 @@
 </p>
 
 # iOS Dumb Phone App Launcher
-Combining Scriptable, iOS settings and shortcuts to create a free way to dumb down your iPhone with more features than standard apps.
+A free way to make your iPhone "dumber" and less distracting using Scriptable widgets, iOS Shortcuts, automations, and built-in settings. It works as a free alternative to apps like Dumb Phone (dp), Blank Spaces Launcher, and Minimalist Launcher, while also going further: with Shortcuts and automations, the apps displayed in the widget launcher can change automatically based on specific events.
 
 ## Table of Contents
 - [Scriptable Setup](#scriptable-setup)
@@ -90,9 +90,10 @@ Script.complete()
 
 1. #### Specialty URLs
     - Apple has some app specific short urls that make things easier, a list of these can be found [here](https://github.com/bhagyas/app-urls)
+        - This list isn't completely comprehensive, so if the app you want to launch isn't on the list try the standard formula "{app name}://". Example: 'strava://'
 
 2. #### Other URLs
-    - If the app you want on the launcher isn't in that list, then you need to create a shortcut in the Shortcuts app that will launch the app
+    - If the app you want on the launcher isn't in that list and the standard formula for the url doesn't work, then you need to create a shortcut in the Shortcuts app that will launch the app
 
     #### Creating a Shortcut to Launch an App
     1. Open the Shortcuts app and create a new shortcut
