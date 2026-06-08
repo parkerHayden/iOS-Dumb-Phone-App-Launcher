@@ -20,8 +20,8 @@ A free way to make your iPhone "dumber" and less distracting using Scriptable wi
 ## Scriptable Setup
 1. Download the app [Scriptable](https://apps.apple.com/us/app/scriptable/id1405459188)
 2. In the iOS files app, navigate to the On My iPhone section and create a new folder named "Scriptable"
-3. In that folder create a new file named WidgetApps.txt
-    - To edit txt files on iOS download the app [Paper](https://apps.apple.com/us/app/paper-writing-app-notes/id1476984841)
+3. In that folder create a new file named WidgetApps.txt via the app [Paper](https://apps.apple.com/us/app/paper-writing-app-notes/id1476984841)
+    - Click the Create Document button in Paper and ensure that the Plain Text option is selected
 4. In Scriptable:
     - Open Settings
     - Go to 'File Bookmarks'
@@ -35,14 +35,15 @@ let folderPath = fm.bookmarkedPath("Scriptable")
 let path = fm.joinPath(folderPath, "WidgetApps.txt")
 
 
-
 if (fm.fileExists(path)) {
   try {
     let content = fm.readString(path)
     apps = JSON.parse(content)
   } catch (e) {
-    console.log("Couldn't find WidgetApps.txt")
+    console.log("JSON failure in WidgetApps.txt")
   }
+} else {
+    console.log("Coudn't find path to WidgetApps.txt")
 }
 
 let widget = new ListWidget()
@@ -84,6 +85,8 @@ Script.complete()
 ]
 ```
 
+ - ##### IMPORTANT NOTE:
+    - iOS has a setting called "Smart Punctuation" disable this setting (at Setttings → General → Keyboard → Smart Punctuation) when typing the JSON as the "smart" quotation mark will ruin the JSON format.
 - You can have as many apps in the array as you would like, but there is a limitation by the size of the Scriptable widget. If you put in more, you will have to adjust the padding and the text size in the given code. For the given code, 5 apps is the advisable amount.
 
 ### URL Guide
